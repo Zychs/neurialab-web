@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Axiom of Trust Emergence | Neurialab</title>
+<meta name="description" content="Reveal complexity in proportion to trust. A design axiom for systems that apprentice the user into coherence." />
+<link rel="canonical" href="https://neurialab.bond/axiom-trust-emergence.html" />
+<link rel="stylesheet" href="site.css" />
+</head>
+<body id="top">
+
+<header class="site">
+  <div class="wrap" style="display:flex;align-items:center;gap:14px">
+    <div class="brand">
+      <div class="dot"></div>
+      <h1>Neurialab | Neuralexica</h1>
+    </div>
+    <span class="sub">Axiom of Trust Emergence</span>
+  </div>
+</header>
+
+<main class="wrap">
+  <a class="back-link" href="index.html">
+    <span>←</span><span>Back to Portal</span>
+  </a>
+
+  <section class="card longform reveal">
+    <header style="margin-bottom:12px;">
+      <h1>Axiom of Trust Emergence</h1>
+      <p class="muted">Reveal complexity in proportion to trust.</p>
+    </header>
+
+    <p>
+      Design is not the art of hiding danger; it is the craft of cultivating discernment.
+      Neurialab treats every interface as an apprenticeship in self-trust. The system does not
+      dump total complexity on day one, and it does not permanently obscure it either. Instead,
+      it reveals new layers only when the user’s readiness has become legible.
+    </p>
+
+    <h2>Progressive Disclosure as Moral Architecture</h2>
+    <p>
+      In most products, progressive disclosure is a convenience pattern. Here it is doctrine.
+      Hiding advanced options behind menus is not enough; the sequence of revelation should mirror
+      how a person metabolizes responsibility.
+    </p>
+
+    <blockquote>
+      Reveal only what the user can meaningfully integrate.  
+      Hide only what would fracture their coherence.  
+      Never confuse comfort with care.
+    </blockquote>
+
+    <p>
+      Your father removes physical safeties from tools to feel their torque directly. You remove
+      psychological friction from mental-health tools so people can feel their own minds again.
+      Both gestures assume the same thing: that intimacy with power is safer than permanent
+      insulation from it.
+    </p>
+
+    <h2>Interface as Apprenticeship</h2>
+    <p>
+      Every Neurialab surface should behave like a workshop, not a vending machine. Early steps
+      are guided and constrained. Later steps hand more of the calibration back to the user.
+    </p>
+
+    <ul class="list" style="margin-top:4px">
+      <li><strong>Early:</strong> Opinionated defaults, gentle constraints, minimal levers.</li>
+      <li><strong>Middle:</strong> Expose the underlying structure (metrics, glyphs, ledgers).</li>
+      <li><strong>Late:</strong> Let the user rewrite the workflow itself — schemas, thresholds, views.</li>
+    </ul>
+
+    <h2>Formal Statement</h2>
+    <p>
+      In Neurialab documentation and implementations, the axiom can be written succinctly as:
+    </p>
+
+    <blockquote>
+      <em>
+        “Reveal complexity in proportion to trust; design not to protect the user from the system,
+        but to induct them into coherence.”
+      </em>
+    </blockquote>
+
+    <p>
+      This axiom should govern onboarding flows, data surfacing, ledger mechanics, and the way AI
+      explanations are scaffolded. If a feature cannot be explained in a way that increases self-trust,
+      it should not ship.
+    </p>
+  </section>
+
+  <footer class="site">
+    <p>© 2025 Neurialab · Neuralexica — Axiom of Trust Emergence</p>
+  </footer>
+</main>
+
+<a href="#top" class="toplink">Top</a>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(reveal => observer.observe(reveal));
+</script>
+</body>
+</html>

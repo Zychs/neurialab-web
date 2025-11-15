@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Neurialab | Neuralexica — Master Roadmap v2.0</title>
+<meta name="description" content="Master Roadmap v2.0 for the Neurialab | Neuralexica ecosystem: phases, milestones, and pain points." />
+<link rel="canonical" href="https://neurialab.bond/roadmap.html" />
+<link rel="stylesheet" href="site.css" />
+</head>
+<body id="top">
+
+<header class="site">
+  <div class="wrap" style="display:flex;align-items:center;gap:14px">
+    <div class="brand">
+      <div class="dot"></div>
+      <h1>Neurialab | Neuralexica</h1>
+    </div>
+    <span class="sub">Master Roadmap v2.0</span>
+  </div>
+</header>
+
+<main class="wrap">
+  <a class="back-link" href="index.html">
+    <span>←</span><span>Back to Portal</span>
+  </a>
+
+  <section class="card section reveal">
+    <h2 class="title">Master Roadmap v2.0</h2>
+    <p class="muted">
+      Offline-readable snapshot of the Neurialab stack.  
+      Phases are framed as tension between <strong>milestones</strong> and <strong>pain surfaces</strong>.
+    </p>
+    <div class="legend">
+      <span class="chip ok">Milestones</span>
+      <span class="chip err">Pain Surfaces</span>
+    </div>
+  </section>
+
+  <!-- Phase I -->
+  <section class="section reveal">
+    <div class="section-header">
+      <h3>Phase I — Foundation</h3>
+      <p class="muted">Cement the semantic substrate and glyphic layer.</p>
+    </div>
+
+    <div class="card" style="margin-bottom:18px">
+      <h4 style="margin-bottom:10px;">Semantic Architecture Layer</h4>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div>
+          <div class="chip ok">Milestones</div>
+          <ol class="list">
+            <li>Finalize 230-D linguistic feature stack → 17 meta-features.</li>
+            <li>Standardize feature definitions and examples.</li>
+            <li>Document calibration procedures for live transcripts.</li>
+          </ol>
+        </div>
+        <div>
+          <div class="chip err">Pain Surfaces</div>
+          <ul class="list">
+            <li>Calibration routines incomplete or too manual.</li>
+            <li>No shared “playbook” for annotators or collaborators.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h4 style="margin-bottom:10px;">Glyphic &amp; Affective Layer</h4>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div>
+          <div class="chip ok">Milestones</div>
+          <ol class="list">
+            <li>Integrate glyph layer into transcript engine.</li>
+            <li>Add confidence scaling &amp; decay for glyph states.</li>
+            <li>Prototype 1–2 “glyph dashboards” for personal sessions.</li>
+          </ol>
+        </div>
+        <div>
+          <div class="chip err">Pain Surfaces</div>
+          <ul class="list">
+            <li>No bidirectional inference between text and glyph yet.</li>
+            <li>Affective mapping is intuitive, not empirically validated.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Phase II -->
+  <section class="section reveal">
+    <div class="section-header">
+      <h3>Phase II — Cymatic Integration</h3>
+      <p class="muted">Bring body, audio, and environment into the same analytic frame.</p>
+    </div>
+
+    <div class="card">
+      <h4 style="margin-bottom:10px;">Cymatic–Linguistic Integration</h4>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div>
+          <div class="chip ok">Milestones</div>
+          <ol class="list">
+            <li>Translate frequency bands → candidate linguistic correlates.</li>
+            <li>Build first-pass pipeline: audio → feature manifolds.</li>
+            <li>Integrate basic EEG signal processing for resonance mapping.</li>
+          </ol>
+        </div>
+        <div>
+          <div class="chip err">Pain Surfaces</div>
+          <ul class="list">
+            <li>Requires empirical EEG / audio data you don’t yet have.</li>
+            <li>Open questions around privacy &amp; consent for bodily data.</li>
+            <li>Signal noise in real-world environments could skew correlations.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Phase III -->
+  <section class="section reveal">
+    <div class="section-header">
+      <h3>Phase III — Reflexive Deployment</h3>
+      <p class="muted">Deploy the integrated system in controlled environments, focusing on user feedback loops.</p>
+    </div>
+
+    <div class="card" style="margin-bottom:18px">
+      <h4 style="margin-bottom:10px;">Deployment & Feedback Layer</h4>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div>
+          <div class="chip ok">Milestones</div>
+          <ol class="list">
+            <li>Launch beta prototype for self-tracking sessions.</li>
+            <li>Implement real-time feedback loops for glyph adjustments.</li>
+            <li>Collect initial dataset from 50+ user interactions.</li>
+          </ol>
+        </div>
+        <div>
+          <div class="chip err">Pain Surfaces</div>
+          <ul class="list">
+            <li>User adoption barriers due to tech setup complexity.</li>
+            <li>Feedback overload if revelations aren't paced by trust levels.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h4 style="margin-bottom:10px;">AI-Assisted Calibration</h4>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div>
+          <div class="chip ok">Milestones</div>
+          <ol class="list">
+            <li>Integrate ML models for predictive glyph states.</li>
+            <li>Automate calibration based on user history.</li>
+          </ol>
+        </div>
+        <div>
+          <div class="chip err">Pain Surfaces</div>
+          <ul class="list">
+            <li>Model bias from limited training data.</li>
+            <li>Over-reliance on AI could erode self-trust.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Phase IV -->
+  <section class="section reveal">
+    <div class="section-header">
+      <h3>Phase IV — Evolutionary Scaling</h3>
+      <p class="muted">Scale to collaborative and communal systems, evolving the field through shared resonance.</p>
+    </div>
+
+    <div class="card">
+      <h4 style="margin-bottom:10px;">Collaborative Resonance Layer</h4>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div>
+          <div class="chip ok">Milestones</div>
+          <ol class="list">
+            <li>Enable multi-user sessions with shared glyph manifolds.</li>
+            <li>Develop community doctrine from aggregated insights.</li>
+            <li>Release open-source tools for custom integrations.</li>
+          </ol>
+        </div>
+        <div>
+          <div class="chip err">Pain Surfaces</div>
+          <ul class="list">
+            <li>Privacy risks in shared data environments.</li>
+            <li>Scaling computations for real-time multi-user resonance.</li>
+            <li>Divergent user interpretations fracturing coherence.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site">
+    <p>© 2025 Neurialab · Neuralexica — Roadmap v2.0</p>
+  </footer>
+</main>
+
+<a href="#top" class="toplink">Top</a>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(reveal => observer.observe(reveal));
+</script>
+</body>
+</html>
