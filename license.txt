@@ -1,0 +1,4 @@
+Copyright (c) 2025 JD 'Renisioure' Bardwell and NeuriaLab.
+All Rights Reserved.
+
+NOTICE: All information, code, and visual concepts contained within this repository are the intellectual property of NeuriaLab. Unauthorized copying, distribution, or use of this file, via any medium, is strictly prohibited.
