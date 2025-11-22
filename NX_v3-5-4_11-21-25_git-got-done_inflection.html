@@ -1,0 +1,1280 @@
+  <!-- NX v3.5.4 FULL LAND | Refined Landing | NU: LEAD GEN -->
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Neurialab | Lighthouse Portal · v3.C.5.1</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Neurialab Lighthouse Portal — a single-surface proto-portal blending Codex, blog, and contact signals into one rotating beam." />
+
+  <style>
+    /* =========================================
+       NEURIALAB · LIGHTHOUSE PORTAL · v3.C.5.1
+       Single-file centroid between Lighthouse & v3 Portal
+       ========================================= */
+
+    :root {
+      --bg: #060608;
+      --surface: #101018;
+      --surface-soft: #141422;
+      --border: #272739;
+      --accent: #7cf7ff;
+      --accent-soft: rgba(124, 247, 255, 0.25);
+      --text-main: #f5f5ff;
+      --text-muted: #8e8eaa;
+      --mono: "JetBrains Mono", Menlo, Monaco, Consolas, monospace;
+      --sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --danger: #ff6b81;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      background: radial-gradient(circle at top, #17172a 0%, #050509 55%, #000 100%);
+      color: var(--text-main);
+      font-family: var(--sans);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      scroll-behavior: smooth;
+      letter-spacing: 0.01em;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* =========================================
+       HEADER · LIGHTHOUSE BEAM
+       ========================================= */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--border);
+      background:
+        radial-gradient(circle at top center, rgba(124,247,255,0.13), transparent 60%),
+        linear-gradient(to right, rgba(6,6,12,0.96), rgba(6,6,12,0.92));
+      backdrop-filter: blur(14px);
+    }
+
+    .wrap {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.75rem;
+    }
+
+    .header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.85rem 0;
+      gap: 1.5rem;
+    }
+
+    .brand-block {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .brand-mark {
+      height: 40px;
+      width: 40px;
+      border-radius: 12px;
+      background:
+        radial-gradient(circle at 30% 20%, #ffffff, transparent 55%),
+        conic-gradient(from 220deg, #7cf7ff, #a6ffcb, #7cf7ff);
+      border: 1px solid rgba(255,255,255,0.45);
+      box-shadow:
+        0 0 18px rgba(124,247,255,0.6),
+        0 0 40px rgba(124,247,255,0.35);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .brand-mark::after {
+      content: "";
+      position: absolute;
+      inset: 25%;
+      border-radius: 50%;
+      border: 1px solid rgba(6,6,8,0.9);
+      background: radial-gradient(circle, rgba(6,6,8,0.9), transparent 70%);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+
+    .brand-name {
+      font-family: var(--mono);
+      letter-spacing: 0.22em;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+    }
+
+    .brand-sub {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .tag-pill {
+      border-radius: 999px;
+      padding: 0.18rem 0.7rem;
+      border: 1px solid var(--accent-soft);
+      color: var(--accent);
+      font-family: var(--mono);
+      font-size: 0.64rem;
+      text-transform: uppercase;
+      background: rgba(5,10,18,0.8);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      font-family: var(--mono);
+      font-size: 0.76rem;
+      text-transform: uppercase;
+    }
+
+    .nav-link {
+      position: relative;
+      padding-bottom: 0.1rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .nav-link:hover {
+      color: var(--text-main);
+    }
+
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 1px;
+      background: var(--accent);
+      transition: width 0.18s ease;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    @media (max-width: 720px) {
+      .header-row {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav {
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+      }
+    }
+
+    /* =========================================
+       HERO · LIGHTHOUSE + PORTAL
+       ========================================= */
+
+    main {
+      flex: 1;
+    }
+
+    .hero {
+      padding: 3.25rem 0 3.5rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.4fr);
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .hero-title {
+      font-family: var(--mono);
+      font-size: 2.35rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-kicker {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 1.8rem;
+      max-width: 36rem;
+    }
+
+    .hero-kicker span {
+      color: var(--accent);
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-bottom: 1.6rem;
+    }
+
+    .btn {
+      border-radius: 999px;
+      padding: 0.55rem 1.1rem;
+      font-family: var(--mono);
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      border: 1px solid var(--border);
+      background: rgba(10,10,18,0.9);
+      color: var(--text-main);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: all 0.16s ease;
+    }
+
+    .btn-primary {
+      border-color: var(--accent-soft);
+      background: radial-gradient(circle at top left, rgba(124,247,255,0.26), rgba(10,10,18,0.98));
+      box-shadow:
+        0 0 18px rgba(124,247,255,0.35),
+        0 18px 38px rgba(0,0,0,0.7);
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      border-color: var(--accent);
+    }
+
+    .btn span.dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 10px rgba(124,247,255,0.9);
+    }
+
+    .hero-meta {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .hero-meta strong {
+      color: var(--accent);
+      font-weight: 400;
+    }
+
+    /* Lighthouse column */
+
+    .tower-card {
+      border-radius: 1rem;
+      border: 1px solid var(--border);
+      background:
+        radial-gradient(circle at 10% 0, rgba(124,247,255,0.25), transparent 55%),
+        radial-gradient(circle at 80% 100%, rgba(255,255,255,0.08), transparent 60%),
+        var(--surface);
+      padding: 1.8rem 1.6rem 1.7rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 26px 50px rgba(0,0,0,0.75);
+    }
+
+    .tower-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .tower-title {
+      font-family: var(--mono);
+      font-size: 0.86rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--text-muted);
+    }
+
+    .tower-status {
+      font-family: var(--mono);
+      font-size: 0.64rem;
+      text-transform: uppercase;
+      border-radius: 999px;
+      padding: 0.18rem 0.7rem;
+      border: 1px solid rgba(255,255,255,0.13);
+      background: rgba(6,6,10,0.85);
+    }
+
+    .tower-beam {
+      border-radius: 0.9rem;
+      border: 1px solid rgba(124,247,255,0.5);
+      background:
+        conic-gradient(from 240deg, rgba(124,247,255,0.15), transparent, rgba(124,247,255,0.08)),
+        radial-gradient(circle at top, rgba(124,247,255,0.3), transparent 60%),
+        rgba(5,5,12,0.9);
+      padding: 1.1rem 1.2rem;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 1.1rem;
+    }
+
+    .tower-beam::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at top, rgba(255,255,255,0.14), transparent 65%);
+      mix-blend-mode: screen;
+      opacity: 0.9;
+      pointer-events: none;
+    }
+
+    .tower-beam p {
+      position: relative;
+      font-size: 0.86rem;
+      line-height: 1.6;
+      color: #e5f7ff;
+    }
+
+    .tower-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.55rem;
+      font-family: var(--mono);
+      font-size: 0.65rem;
+    }
+
+    .tower-chip {
+      border-radius: 999px;
+      padding: 0.3rem 0.6rem;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(5,5,10,0.8);
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* =========================================
+       SECTION GROUPS
+       ========================================= */
+
+    .section {
+      padding: 2rem 0 2.6rem;
+      border-top: 1px solid rgba(22,22,38,0.9);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.6rem;
+      flex-wrap: wrap;
+    }
+
+    .section-title {
+      font-family: var(--mono);
+      font-size: 0.92rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .section-sub {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      max-width: 32rem;
+    }
+
+    /* =========================================
+       BREADCRUMBS + PREVIEW STRIPS
+       ========================================= */
+
+    .timeline-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 2.2fr);
+      gap: 2.2rem;
+    }
+
+    .breadcrumb-card {
+      border-radius: 0.9rem;
+      border: 1px solid var(--border);
+      background: var(--surface-soft);
+      padding: 1.4rem 1.5rem;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+    }
+
+    .breadcrumb-card h3 {
+      font-size: 0.84rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      margin-bottom: 0.9rem;
+      color: var(--accent);
+    }
+
+    .crumb {
+      margin-bottom: 0.65rem;
+      color: var(--text-muted);
+    }
+
+    .crumb span {
+      color: var(--text-main);
+    }
+
+    .crumb:last-child {
+      margin-bottom: 0;
+    }
+
+    .preview-strips {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .preview-tile {
+      border-radius: 0.85rem;
+      border: 1px solid var(--border);
+      background: radial-gradient(circle at top left, rgba(124,247,255,0.14), transparent 60%), rgba(10,10,18,0.92);
+      padding: 1.1rem 1.3rem;
+    }
+
+    .preview-tile h3 {
+      font-size: 1.02rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .preview-meta {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 0.5rem;
+    }
+
+    .preview-body {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .preview-link {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--accent);
+      text-transform: uppercase;
+    }
+
+    /* =========================================
+       MINI CODEX
+       ========================================= */
+
+    .codex-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1rem;
+    }
+
+    .codex-card {
+      border-radius: 0.85rem;
+      border: 1px solid var(--border);
+      background: rgba(10,10,18,0.95);
+      padding: 1.1rem 1.2rem;
+      cursor: pointer;
+      transition: all 0.16s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .codex-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top left, rgba(124,247,255,0.12), transparent 70%);
+      opacity: 0;
+      transition: opacity 0.18s ease;
+      pointer-events: none;
+    }
+
+    .codex-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: 0 18px 36px rgba(0,0,0,0.8);
+    }
+
+    .codex-card:hover::after {
+      opacity: 1;
+    }
+
+    .codex-id {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      margin-bottom: 0.35rem;
+    }
+
+    .codex-title {
+      font-size: 1rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .codex-meta {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 0.55rem;
+    }
+
+    .codex-snippet {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    /* Modal */
+
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.88);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 200;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.22s ease;
+    }
+
+    .modal-backdrop.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-panel {
+      width: 92%;
+      max-width: 820px;
+      max-height: 86vh;
+      border-radius: 1rem;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 24px 52px rgba(0,0,0,0.9);
+    }
+
+    .modal-header {
+      padding: 1.4rem 1.7rem 1.1rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      gap: 1.2rem;
+      align-items: flex-start;
+    }
+
+    .modal-header-main {
+      flex: 1;
+    }
+
+    .modal-id {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      margin-bottom: 0.25rem;
+    }
+
+    .modal-title {
+      font-size: 1.3rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .modal-meta {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--text-muted);
+    }
+
+    .modal-close {
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(8,8,12,0.95);
+      padding: 0.4rem 0.9rem;
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      cursor: pointer;
+      color: var(--text-main);
+    }
+
+    .modal-close:hover {
+      border-color: var(--accent);
+    }
+
+    .modal-body {
+      padding: 1.7rem 1.8rem 1.6rem;
+      overflow-y: auto;
+      font-size: 0.96rem;
+      line-height: 1.7;
+      color: #d0d0e5;
+    }
+
+    .modal-body blockquote {
+      border-left: 2px solid var(--accent);
+      padding-left: 1.2rem;
+      margin-bottom: 1.6rem;
+      font-style: italic;
+      color: #f7f7ff;
+    }
+
+    .modal-body h4 {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-top: 1.7rem;
+      margin-bottom: 0.6rem;
+      color: var(--accent);
+    }
+
+    .modal-body ul {
+      margin-left: 1.3rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .modal-body li {
+      margin-bottom: 0.4rem;
+    }
+
+    /* =========================================
+       CONTACT STRIP
+       ========================================= */
+
+    .contact-strip {
+      display: grid;
+      grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.6fr);
+      gap: 1.7rem;
+    }
+
+    .contact-card {
+      border-radius: 0.9rem;
+      border: 1px solid var(--border);
+      background: rgba(10,10,18,0.94);
+      padding: 1.3rem 1.5rem;
+    }
+
+    .contact-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-card p {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .contact-card ul {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-left: 1.3rem;
+    }
+
+    .contact-card li {
+      margin-bottom: 0.4rem;
+    }
+
+    @media (max-width: 900px) {
+      .timeline-grid,
+      .contact-strip {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* =========================================
+       FOOTER
+       ========================================= */
+
+    footer {
+      border-top: 1px solid var(--border);
+      background: rgba(5,5,10,0.96);
+      padding: 1rem 0 1.2rem;
+      margin-top: 1rem;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-row a {
+      color: var(--accent);
+    }
+
+    /* hash anchor offset helper */
+    .anchor-offset {
+      position: relative;
+      top: -70px;
+      visibility: hidden;
+      height: 0;
+    }
+
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="header-row">
+      <div class="brand-block">
+        <div class="brand-mark" aria-hidden="true"></div>
+        <div class="brand-text">
+          <div class="brand-name">NEURIALAB · NEURALEXICA</div>
+          <div class="brand-sub">Lighthouse Portal · v3.C.5.1 · proto-surface</div>
+        </div>
+        <span class="tag-pill">Rotating Signal</span>
+      </div>
+      <nav>
+        <a class="nav-link" data-scroll-target="#codex">Codex</a>
+        <a class="nav-link" data-scroll-target="#blog">Blog</a>
+        <a class="nav-link" data-scroll-target="#contact">Contact</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <h1 class="hero-title">Lighthouse Layer</h1>
+          <p class="hero-kicker">
+            A single-surface centroid between the early portals and the
+            full Codex engine. <span>Not the tower, not the workshop—just the beam.</span>
+          </p>
+
+          <div class="hero-buttons">
+            <button class="btn btn-primary" type="button" data-scroll-target="#codex">
+              <span class="dot"></span>
+              Enter Codex Strip
+            </button>
+            <button class="btn" type="button" data-scroll-target="#blog">
+              View Field Notes
+            </button>
+            <button class="btn" type="button" data-scroll-target="#contact">
+              Contact Surface
+            </button>
+          </div>
+
+          <div class="hero-meta">
+            <div><strong>Stack:</strong> Self · System · Governance · Cosmologist</div>
+            <div><strong>Mode:</strong> Resonance, Collaboration, and humility</div>
+          </div>
+        </div>
+
+        <aside class="tower-card">
+          <div class="tower-header">
+            <div>
+              <div class="tower-title">Lighthouse Telemetry</div>
+            </div>
+            <div class="tower-status">
+              Beam online · v3.C.5.1
+            </div>
+          </div>
+
+          <div class="tower-beam">
+            <p>
+              The corpus lives in the tower. Here, you are only seeing the
+              rotating lens—breadcrumbed signals from versions v1.0 → v3.2,
+              compressed into a single, navigable surface.
+            </p>
+          </div>
+
+          <div class="tower-grid">
+            <div class="tower-chip">v1 — monolith</div>
+            <div class="tower-chip">v2 — axial shell</div>
+            <div class="tower-chip">v3 — portal stack</div>
+            <div class="tower-chip">codex grid</div>
+            <div class="tower-chip">blog strips</div>
+            <div class="tower-chip">contact vector</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- BREADCRUMBS + PREVIEW -->
+  <span id="codex" class="anchor-offset"></span>
+  <section class="section">
+    <div class="wrap">
+      <div class="section-header">
+        <h2 class="section-title">Breadcrumb Manifold</h2>
+        <p class="section-sub">
+          A compressed lineage of Neurialab site versions, woven into a live
+          preview of the Codex, blog, and contact surfaces. This is the centroid
+          between “teaser” and “portal”.
+        </p>
+      </div>
+
+      <div class="timeline-grid">
+        <aside class="breadcrumb-card">
+          <h3>Version trail · v1 → v3.2</h3>
+          <p class="crumb"><span>v1.0</span> · dark monolith layout, static text, no codex mechanics.</p>
+          <p class="crumb"><span>v2.1</span> · JetBrains mono, thin borders, axial symmetry and portal framing.</p>
+          <p class="crumb"><span>v3.0</span> · four-scalar cymatic stack (Self · System · Governance · Cosmologist).</p>
+          <p class="crumb"><span>v3.1</span> · codex overlays, Axzene motif, modal doctrine readers.</p>
+          <p class="crumb"><span>v3.2</span> · portal skeleton, project map, blog + contact split.</p>
+          <p class="crumb"><span>v3.C.5.1</span> · this page: the rotating centroid between teaser and full system.</p>
+        </aside>
+
+        <div class="preview-strips">
+          <article class="preview-tile">
+            <div class="preview-meta">Codex · Doctrinal surface</div>
+            <h3>Operational Physics for the Mind</h3>
+            <p class="preview-body">
+              Doctrines are treated as physical laws reinterpreted as cognitive
+              operators. Click any doctrine card below to open a condensed reader.
+            </p>
+            <button class="btn" type="button" data-scroll-target="#codex-grid">
+              Jump to mini-Codex
+            </button>
+          </article>
+
+          <article class="preview-tile">
+            <div class="preview-meta">Blog · Field notes</div>
+            <h3>Fragments from the workshop</h3>
+            <p class="preview-body">
+              Devlogs, cymatic notebooks, and Neurophase Coherence Dynamics (NCD)
+              experiments will live in the blog plane. For now, this centroid
+              only exposes their headings and intent.
+            </p>
+            <span class="preview-link">Preview below · content pending</span>
+          </article>
+
+          <article class="preview-tile">
+            <div class="preview-meta">Contact · Vector</div>
+            <h3>How to approach the tower</h3>
+            <p class="preview-body">
+              The contact surface defines the terms of engagement: what Neurialab
+              is for, and which kinds of collaboration make the most sense.
+            </p>
+            <span class="preview-link">See contact strip near footer</span>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MINI CODEX GRID -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-header">
+        <h2 class="section-title">Codex Strip · Sample Doctrines</h2>
+        <p class="section-sub">
+          A small slice of the Codex engine: nine doctrines, each mapping a
+          domain of physics onto a behavior of mind. In the full portal, this
+          expands into a searchable grid; here, it’s a lighthouse preview.
+        </p>
+      </div>
+
+      <div id="codex-grid" class="codex-grid">
+        <!-- Cards will be injected by JS using DOCTRINES -->
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG PREVIEW -->
+  <span id="blog" class="anchor-offset"></span>
+  <section class="section">
+    <div class="wrap">
+      <div class="section-header">
+        <h2 class="section-title">Blog Strips · Incoming</h2>
+        <p class="section-sub">
+          These are placeholders for future entries. Think of them as labeled
+          drawers in a lab that has not yet been unpacked.
+        </p>
+      </div>
+
+      <div class="preview-strips">
+        <article class="preview-tile">
+          <div class="preview-meta">Fragment 001 · Cymatic Drift</div>
+          <h3>Entropy as Texture, Not Enemy</h3>
+          <p class="preview-body">
+            Early notes on how journaling devices reshape perceived disorder,
+            and why the geometry of reflection matters more than raw data volume.
+          </p>
+          <span class="preview-link">Full entry pending</span>
+        </article>
+
+        <article class="preview-tile">
+          <div class="preview-meta">Devlog · Codex Engine</div>
+          <h3>Why Doctrines, Not “Notes”?</h3>
+          <p class="preview-body">
+            A walkthrough of the decision to model principles as reusable
+            operators instead of inspirational quotes or mood logs.
+          </p>
+          <span class="preview-link">Full entry pending</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT STRIP -->
+  <span id="contact" class="anchor-offset"></span>
+  <section class="section">
+    <div class="wrap">
+      <div class="section-header">
+        <h2 class="section-title">Contact Vector</h2>
+        <p class="section-sub">
+          A simple approach surface: what Neurialab is open to, and how to reach
+          the operator behind the tower.
+        </p>
+      </div>
+
+      <div class="contact-strip">
+        <div class="contact-card">
+          <h3>Direct</h3>
+          <p><strong>Email:</strong>
+            <span style="color: var(--accent);">justanoxide@neurialab.net</span>
+          </p>
+
+          <p><strong>Focus:</strong> Neurophase Coherence Dynamics (NCD)</p>
+
+          <p style="color: var(--text-muted); font-size: 0.83rem; margin-top: 0.5rem;">
+            <strong>Neurophase</strong> — the phase-configuration of cognition as waveform.<br>
+            <strong>Coherence</strong> — the invariant ±1 regime: inversion, alignment, laminarity.<br>
+            <strong>Dynamics</strong> — transition mechanics, attractors, variance, regulation.<br>
+            <br>
+            Formal frame:
+            <em>Neurophase Coherence Dynamics in Agentic Systems (NCD-AS)</em>.
+          </p>
+
+          <p><strong>Mode:</strong> Resonance, Collaboration, and humility</p>
+        </div>
+
+        <div class="contact-card">
+          <h3>What This Tower Is For</h3>
+          <ul>
+            <li>Experimental cognition tools and semantic OS architectures.</li>
+            <li>Applied research at the border of physics metaphor and behavior design.</li>
+            <li>Hardware + software prototypes around journaling and reflection.</li>
+            <li>Consulting for teams willing to treat attention as infrastructure.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- MODAL FOR DOCTRINES -->
+<div id="codex-modal" class="modal-backdrop" aria-hidden="true">
+  <article class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <header class="modal-header">
+      <div class="modal-header-main">
+        <div id="modal-id" class="modal-id">ENTRY 000</div>
+        <h2 id="modal-title" class="modal-title">Doctrine Title</h2>
+        <div id="modal-meta" class="modal-meta">Domain · Scalar</div>
+      </div>
+      <button id="modal-close" class="modal-close" type="button">Close [ESC]</button>
+    </header>
+    <div id="modal-body" class="modal-body"></div>
+  </article>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-row">
+      <div>© 2025 Neurialab · Neuralexica · Lighthouse Layer v3.C.5.1</div>
+      <div>
+        Inner engine: offline · This surface is a centroid between
+        <span style="color: var(--accent);">teaser</span> and
+        <span style="color: var(--accent);">portal</span>.
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ------------------------------
+  // Smooth scroll for nav / buttons
+  // ------------------------------
+  function handleScrollClick(e) {
+    const target = e.currentTarget.getAttribute("data-scroll-target");
+    if (!target) return;
+    const el = document.querySelector(target);
+    if (!el) return;
+    e.preventDefault();
+    window.scrollTo({
+      top: el.getBoundingClientRect().top + window.scrollY - 72,
+      behavior: "smooth"
+    });
+  }
+
+  document.querySelectorAll("[data-scroll-target]").forEach(el => {
+    el.addEventListener("click", handleScrollClick);
+  });
+
+  // ------------------------------
+  // Codex doctrine data
+  // ------------------------------
+  const DOCTRINES = [
+    {
+      id: "001",
+      title: "Lichtenburgal Affect",
+      domain: "Electrodynamics",
+      scalar: "Self",
+      quote: "To conduct another’s chaos without incineration.",
+      body: `
+        <h4>I. Abstract</h4>
+        <p>This doctrine defines relational electrodynamics. It rejects the binary of blocking or absorbing emotion. Instead, the practitioner becomes a superconductor—a designated path of least resistance for external volatility.</p>
+        <h4>II. Mechanism</h4>
+        <p>Resistance generates heat (conflict). Conduction generates flow. Like lightning etching fractal patterns through resin, deep empathy leaves marks. These are not wounds, but channels of capacity.</p>
+        <h4>III. Operational Requisites</h4>
+        <ul>
+          <li><strong>Controlled Vulnerability:</strong> Removing shielding only when grounded.</li>
+          <li><strong>Calibrated Exposure:</strong> Measuring the voltage of the other party.</li>
+          <li><strong>Post-Process Reflection:</strong> Cooling down to transform discharge into data.</li>
+        </ul>
+      `
+    },
+    {
+      id: "002",
+      title: "Entropicuilibrium",
+      domain: "Thermodynamics",
+      scalar: "Self",
+      quote: "To stand within the storm, and not be swept away.",
+      body: `
+        <h4>I. Abstract</h4>
+        <p>Governs internal homeostasis. True stability is not stasis, but synchronized spin. It is the art of maintaining a center while the periphery accelerates.</p>
+        <h4>II. Mechanism</h4>
+        <p>Entropy is raw data. The practitioner metabolizes disorder into structure, much like a hurricane maintains an eye through perfect rotation.</p>
+        <h4>III. Operational Requisites</h4>
+        <ul>
+          <li><strong>Radical Acceptance:</strong> Acknowledging flux as natural.</li>
+          <li><strong>Non-Identification:</strong> Watching the self react without being the reaction.</li>
+          <li><strong>Velocity Discipline:</strong> Remaining still at the axis of the cyclone.</li>
+        </ul>
+      `
+    },
+    {
+      id: "003",
+      title: "Kinetic Recursion",
+      domain: "Fractal Mechanics",
+      scalar: "System",
+      quote: "To rotate the internal geometry outwards.",
+      body: `
+        <h4>I. Abstract</h4>
+        <p>Governs the translation of intent into reality. Action is not a single event but a self-similar wave propagated through the medium of the world.</p>
+        <h4>II. Mechanism</h4>
+        <p>The smallest gesture contains the mathematical DNA of the largest ambition. Every iteration is a test of alignment between micro-actions and macro-goals.</p>
+        <h4>III. Operational Requisites</h4>
+        <ul>
+          <li><strong>Fractal Alignment:</strong> Small behaviors must match stated aims.</li>
+          <li><strong>Bifurcation Management:</strong> Steering critical divergence points of choice.</li>
+        </ul>
+      `
+    },
+    {
+      id: "004",
+      title: "Spectral Cognition",
+      domain: "Optics / Wave Physics",
+      scalar: "Self",
+      quote: "To perceive not the object, but the frequency.",
+      body: `
+        <h4>I. Abstract</h4>
+        <p>Understanding is spectral. Information exists in bands—from raw sensation to abstract logic. Mastery is sliding between these bands without tearing.</p>
+        <h4>II. Mechanism</h4>
+        <p>The mind is a prism. Most errors are scale mismatches: using logic to solve emotion, or emotion to solve a structural defect.</p>
+        <h4>III. Operational Requisites</h4>
+        <ul>
+          <li><strong>Bandwidth Calibration:</strong> Identifying the layer at which the problem lives.</li>
+          <li><strong>Resonance Tuning:</strong> Adjusting internal state to match the signal, not the noise.</li>
+        </ul>
+      `
+    },
+    {
+      id: "005",
+      title: "Iterated Intent",
+      domain: "Cybernetics",
+      scalar: "System",
+      quote: "The will is not a force, but a function applied to itself.",
+      body: `
+        <h4>I. Abstract</h4>
+        <p>Frames persistence as recursion. Current output becomes next-cycle input. To change the result, change the function, not just the intensity.</p>
+        <h4>II. Mechanism</h4>
+        <p>Habits are algorithms. They either tighten or loosen the orbit around what you say you want.</p>
+        <h4>III. Operational Requisites</h4>
+        <ul>
+          <li><strong>Algorithmic Consistency:</strong> Principles over moods and spikes of motivation.</li>
+          <li><strong>Error Fractal Analysis:</strong> Repeat failures reveal manifold curvature.</li>
+        </ul>
+      `
+    },
+    {
+      id: "006",
+      title: "Frictional Significance",
+      domain: "Classical Mechanics",
+      scalar: "Governance",
+      quote: "A surface without resistance offers no traction.",
+      body: `
+        <h4>I. Abstract</h4>
+        <p>Rejects the frictionless ideal. Consciousness requires resistance to create traction. Meaning is proportional to the work done.</p>
+        <h4>II. Mechanism</h4>
+        <p>We only value what resists us enough to demand engagement. Friction converts raw effort into embodied skill.</p>
+        <h4>III. Operational Requisites</h4>
+        <ul>
+          <li><strong>Strategic Impedance:</strong> Building deliberate speed bumps into decision flows.</li>
+          <li><strong>Effort-Impact Matching:</strong> High-impact moves should inherently carry more resistance.</li>
+        </ul>
+      `
+    },
+    {
+      id: "007",
+      title: "Hysteretic Integration",
+      domain: "Materials Science",
+      scalar: "Governance",
+      quote: "The state is defined by the history of the material.",
+      body: `
+        <h4>I. Abstract</h4>
+        <p>Based on magnetic hysteresis. You cannot undo an experience; you can only move forward to a new equilibrium containing its memory.</p>
+        <h4>II. Mechanism</h4>
+        <p>Every stressor leaves a trace in the structure. Integration means designing around the new grain, not pretending the old one remains.</p>
+        <h4>III. Operational Requisites</h4>
+        <ul>
+          <li><strong>Non-Destructive Evolution:</strong> Folding the past into the design instead of erasing it.</li>
+          <li><strong>Path-Dependent Logs:</strong> Recording the route, not just the final state.</li>
+        </ul>
+      `
+    },
+    {
+      id: "008",
+      title: "Proprioceptive Extension",
+      domain: "Biology / Prosthetics",
+      scalar: "System",
+      quote: "Finding the thought as easily as one’s own hand.",
+      body: `
+        <h4>I. Abstract</h4>
+        <p>Governs the sensory integration of tools. The system should feel like a phantom limb that holds data, not a separate application to visit.</p>
+        <h4>II. Mechanism</h4>
+        <p>When extension is successful, navigation becomes kinesthetic: you move through knowledge as if through a familiar room.</p>
+        <h4>III. Operational Requisites</h4>
+        <ul>
+          <li><strong>The No-Look Pass:</strong> Key actions reachable without conscious searching.</li>
+          <li><strong>Feedback Texture:</strong> Subtle cues that indicate the weight and volatility of a decision.</li>
+        </ul>
+      `
+    },
+    {
+      id: "009",
+      title: "Anticipatory Resonance",
+      domain: "Wave Interference",
+      scalar: "Cosmologist",
+      quote: "The field ripples before the object moves.",
+      body: `
+        <h4>I. Abstract</h4>
+        <p>The system does not just react; it vibrates in sympathy with the trajectory of the user. It prepares the space ahead instead of cleaning up behind.</p>
+        <h4>II. Mechanism</h4>
+        <p>Like a skilled accompanist, it plays the supporting chord a moment before the note is struck.</p>
+        <h4>III. Operational Requisites</h4>
+        <ul>
+          <li><strong>Vector Analysis:</strong> Tracking rate of change, not just state snapshots.</li>
+          <li><strong>Pre-Computation:</strong> Preloading the tools most likely to be needed next.</li>
+        </ul>
+      `
+    }
+  ];
+
+  // ------------------------------
+  // Render mini Codex grid
+  // ------------------------------
+  const gridEl = document.getElementById("codex-grid");
+  const modalEl = document.getElementById("codex-modal");
+  const modalIdEl = document.getElementById("modal-id");
+  const modalTitleEl = document.getElementById("modal-title");
+  const modalMetaEl = document.getElementById("modal-meta");
+  const modalBodyEl = document.getElementById("modal-body");
+  const modalCloseEl = document.getElementById("modal-close");
+
+  function renderCodexGrid() {
+    gridEl.innerHTML = "";
+    DOCTRINES.forEach(doc => {
+      const card = document.createElement("article");
+      card.className = "codex-card";
+      card.innerHTML = `
+        <div class="codex-id">ENTRY ${doc.id}</div>
+        <div class="codex-title">${doc.title}</div>
+        <div class="codex-meta">${doc.domain} · ${doc.scalar}</div>
+        <p class="codex-snippet">${doc.quote}</p>
+      `;
+      card.addEventListener("click", () => openDoctrine(doc));
+      gridEl.appendChild(card);
+    });
+  }
+
+  function openDoctrine(doc) {
+    modalIdEl.textContent = `ENTRY ${doc.id}`;
+    modalTitleEl.textContent = doc.title;
+    modalMetaEl.textContent = `${doc.domain} · ${doc.scalar}`;
+    modalBodyEl.innerHTML = `
+      <blockquote>${doc.quote}</blockquote>
+      ${doc.body}
+    `;
+    modalEl.classList.add("active");
+    document.addEventListener("keydown", handleModalKey);
+  }
+
+  function closeDoctrine() {
+    modalEl.classList.remove("active");
+    document.removeEventListener("keydown", handleModalKey);
+  }
+
+  function handleModalKey(e) {
+    if (e.key === "Escape") {
+      closeDoctrine();
+    }
+  }
+
+  modalEl.addEventListener("click", (e) => {
+    if (e.target === modalEl) closeDoctrine();
+  });
+  modalCloseEl.addEventListener("click", closeDoctrine);
+
+  renderCodexGrid();
+</script>
+
+</body>
+</html>
+
