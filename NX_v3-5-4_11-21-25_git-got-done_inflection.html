@@ -556,6 +556,138 @@
       color: var(--text-muted);
     }
 
+    /* =========================================
+       FULL DOCTRINE CARDS (MIRRORED)
+       ========================================= */
+
+    .doctrine-section {
+      margin-top: 2.5rem;
+    }
+
+    .doctrine-card-grid {
+      display: grid;
+      gap: 1.2rem;
+    }
+
+    .doctrine-card {
+      border-radius: 1rem;
+      border: 1px solid var(--border);
+      background: linear-gradient(90deg, rgba(124,247,255,0.08), rgba(10,10,18,0.96) 28%, rgba(8,8,16,0.94) 72%, rgba(124,247,255,0.06));
+      overflow: hidden;
+      box-shadow: 0 18px 36px rgba(0,0,0,0.65);
+    }
+
+    .doctrine-card .card-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 1px;
+      background: linear-gradient(90deg, rgba(124,247,255,0.08), rgba(124,247,255,0));
+    }
+
+    .doctrine-card .col-left,
+    .doctrine-card .col-right {
+      padding: 1.4rem 1.5rem;
+      background: rgba(8,8,14,0.96);
+    }
+
+    .doctrine-card .col-right {
+      background: radial-gradient(circle at 14% 18%, rgba(124,247,255,0.08), transparent 55%), rgba(10,10,18,0.92);
+      border-left: 1px solid rgba(124,247,255,0.08);
+    }
+
+    .doctrine-card .pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 2.4rem;
+      padding: 0.3rem 0.8rem;
+      border-radius: 999px;
+      border: 1px solid var(--accent-soft);
+      color: var(--accent);
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      margin-bottom: 0.85rem;
+      background: rgba(5,8,14,0.8);
+    }
+
+    .doctrine-card .title {
+      font-size: 1.45rem;
+      letter-spacing: 0.01em;
+      margin-bottom: 0.25rem;
+    }
+
+    .doctrine-card .subtitle {
+      color: var(--text-muted);
+      margin-bottom: 1.05rem;
+      font-size: 0.96rem;
+    }
+
+    .doctrine-card .section-label {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      margin-bottom: 0.35rem;
+      text-transform: uppercase;
+    }
+
+    .doctrine-card .body,
+    .doctrine-card .stack-text {
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 1rem;
+      font-size: 0.92rem;
+    }
+
+    .stack-pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.28rem 0.8rem;
+      border-radius: 999px;
+      border: 1px solid rgba(124,247,255,0.35);
+      color: var(--text-main);
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      margin-bottom: 0.35rem;
+      background: rgba(124,247,255,0.08);
+    }
+
+    .footer-mirror {
+      margin-top: 1.2rem;
+      padding-top: 0.9rem;
+      border-top: 1px solid rgba(124,247,255,0.12);
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+      text-align: right;
+    }
+
+    .encrypted-card .col-left,
+    .encrypted-card .col-right {
+      background: linear-gradient(135deg, rgba(10,10,18,0.94), rgba(20,12,22,0.88));
+    }
+
+    .classified-card .col-left,
+    .classified-card .col-right {
+      background: linear-gradient(135deg, rgba(8,10,18,0.94), rgba(10,14,24,0.9));
+      border-color: rgba(255,255,255,0.08);
+    }
+
+    @media (max-width: 900px) {
+      .doctrine-card .card-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .doctrine-card .col-right {
+        border-left: none;
+        border-top: 1px solid rgba(124,247,255,0.08);
+      }
+    }
+
     /* Modal */
 
     .modal-backdrop {
@@ -660,6 +792,32 @@
       margin-top: 1.7rem;
       margin-bottom: 0.6rem;
       color: var(--accent);
+    }
+
+    .modal-subtitle {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .modal-stack-grid {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      margin-top: 1rem;
+    }
+
+    .modal-stack {
+      border: 1px solid var(--border);
+      border-radius: 0.65rem;
+      padding: 0.8rem 0.9rem;
+      background: rgba(10,10,18,0.92);
+    }
+
+    .modal-stack p {
+      color: var(--text-muted);
+      line-height: 1.55;
+      font-size: 0.9rem;
     }
 
     .modal-body ul {
@@ -901,18 +1059,33 @@
   <!-- MINI CODEX GRID -->
   <section class="section">
     <div class="wrap">
-      <div class="section-header">
-        <h2 class="section-title">Codex Strip · Sample Doctrines</h2>
-        <p class="section-sub">
-          A small slice of the Codex engine: nine doctrines, each mapping a
-          domain of physics onto a behavior of mind. In the full portal, this
-          expands into a searchable grid; here, it’s a lighthouse preview.
-        </p>
-      </div>
+        <div class="section-header">
+          <h2 class="section-title">Codex Strip · Sample Doctrines</h2>
+          <p class="section-sub">
+            A small slice of the Codex engine: twelve doctrines distilled for
+            quick preview. In the full portal, this expands into a searchable
+            grid; here, it’s a lighthouse preview feeding the mirrored canon below.
+          </p>
+        </div>
 
       <div id="codex-grid" class="codex-grid">
         <!-- Cards will be injected by JS using DOCTRINES -->
       </div>
+    </div>
+  </section>
+
+  <section class="section doctrine-section">
+    <div class="wrap">
+      <div class="section-header">
+        <h2 class="section-title">Doctrinal Canon · D01 – D12</h2>
+        <p class="section-sub">
+          The full mirrored tri-lateral doctrine cards using the curated DOCTRINES array.
+          Each card holds the core statement, embodied practice, macro lens, and waveform stacks
+          for Self · System · Macro.
+        </p>
+      </div>
+
+      <div id="doctrine-card-grid" class="doctrine-card-grid"></div>
     </div>
   </section>
 
@@ -1052,168 +1225,186 @@
   // ------------------------------
   const DOCTRINES = [
     {
-      id: "001",
-      title: "Lichtenburgal Affect",
-      domain: "Electrodynamics",
-      scalar: "Self",
-      quote: "To conduct another’s chaos without incineration.",
-      body: `
-        <h4>I. Abstract</h4>
-        <p>This doctrine defines relational electrodynamics. It rejects the binary of blocking or absorbing emotion. Instead, the practitioner becomes a superconductor—a designated path of least resistance for external volatility.</p>
-        <h4>II. Mechanism</h4>
-        <p>Resistance generates heat (conflict). Conduction generates flow. Like lightning etching fractal patterns through resin, deep empathy leaves marks. These are not wounds, but channels of capacity.</p>
-        <h4>III. Operational Requisites</h4>
-        <ul>
-          <li><strong>Controlled Vulnerability:</strong> Removing shielding only when grounded.</li>
-          <li><strong>Calibrated Exposure:</strong> Measuring the voltage of the other party.</li>
-          <li><strong>Post-Process Reflection:</strong> Cooling down to transform discharge into data.</li>
-        </ul>
-      `
+      id: "D01",
+      title: "Doctrine of the Negentropic Drive",
+      subtitle: "The counter-force to universal chaos.",
+      meta: "Self · System · Macro",
+      core: "Our core moral obligation is to actively create order and reduce suffering as a counter-force to universal chaos — not merely as an abstract ethical preference, but as a continuous, lived commitment to cultivate coherence wherever our attention, labor, or relationships make contact with disorder.",
+      practice: "This doctrine frames every choice as either feeding decay or resisting it. It asks us to become deliberate engineers of stability in our nervous systems, environments, and relational structures, so that the universe we inhabit bends a little less toward fragmentation.",
+      macro: "Viewed at scale, the Negentropic Drive becomes a civilizational ethic: a sustained bias toward preserving what works, repairing what breaks, and weaving islands of stability into an otherwise turbulent cosmos.",
+      stack: {
+        self: "Personal Order — establishing routines, environments, and sensory bounds that reduce internal entropy, making your mind and body a more reliable vessel rather than a drifting surface for reactivity and noise.",
+        system: "Operational Coherence — structuring teams, tools, and channels so that information stays clean, responsibilities stay unambiguous, and momentum flows toward shared aims instead of leaking into confusion, noise, or duplicated effort.",
+        macro: "Civilizational Resilience — building physical, cultural, and institutional architectures that survive turbulence, absorb shocks, and continue producing meaning and uplift long after any individual contributor has passed through."
+      },
+      footer: "Doctrine of the Negentropic Drive"
     },
     {
-      id: "002",
-      title: "Entropicuilibrium",
-      domain: "Thermodynamics",
-      scalar: "Self",
-      quote: "To stand within the storm, and not be swept away.",
-      body: `
-        <h4>I. Abstract</h4>
-        <p>Governs internal homeostasis. True stability is not stasis, but synchronized spin. It is the art of maintaining a center while the periphery accelerates.</p>
-        <h4>II. Mechanism</h4>
-        <p>Entropy is raw data. The practitioner metabolizes disorder into structure, much like a hurricane maintains an eye through perfect rotation.</p>
-        <h4>III. Operational Requisites</h4>
-        <ul>
-          <li><strong>Radical Acceptance:</strong> Acknowledging flux as natural.</li>
-          <li><strong>Non-Identification:</strong> Watching the self react without being the reaction.</li>
-          <li><strong>Velocity Discipline:</strong> Remaining still at the axis of the cyclone.</li>
-        </ul>
-      `
+      id: "D02",
+      title: "Doctrine of the Cator’ed Ego",
+      subtitle: "Optimizing for energetic cost.",
+      meta: "Self · System · Macro",
+      core: "The Cator’ed Ego reframes motivation as an energy-economy problem. The mind avoids what feels “expensive.” This doctrine provides a mechanical method for reducing the perceived activation cost of action, enabling fluidity where inertia once dominated.",
+      practice: "By pre-structuring tasks into low-resistance sequences and minimizing micro-friction points, the individual bypasses the ego’s tendency toward stall, transforming formerly burdensome behaviors into natural defaults.",
+      macro: "At the system scale, entities that reduce activation cost achieve enormous advantage, outperforming competitors through elegant energy allocation and smoother behavioral throughput.",
+      stack: {
+        self: "Micro-habits — restructuring personal environments so the next correct action is always the lowest-energy action.",
+        system: "Frictionless Design — workflows engineered to eliminate redundant steps, ambiguous cues, and unnecessary cognitive branching.",
+        macro: "Economic Efficiency — systems optimized so output per unit of psychic or operational energy consistently rises across cycles."
+      },
+      footer: "Doctrine of the Cator’ed Ego"
     },
     {
-      id: "003",
-      title: "Kinetic Recursion",
-      domain: "Fractal Mechanics",
-      scalar: "System",
-      quote: "To rotate the internal geometry outwards.",
-      body: `
-        <h4>I. Abstract</h4>
-        <p>Governs the translation of intent into reality. Action is not a single event but a self-similar wave propagated through the medium of the world.</p>
-        <h4>II. Mechanism</h4>
-        <p>The smallest gesture contains the mathematical DNA of the largest ambition. Every iteration is a test of alignment between micro-actions and macro-goals.</p>
-        <h4>III. Operational Requisites</h4>
-        <ul>
-          <li><strong>Fractal Alignment:</strong> Small behaviors must match stated aims.</li>
-          <li><strong>Bifurcation Management:</strong> Steering critical divergence points of choice.</li>
-        </ul>
-      `
+      id: "D03",
+      title: "Doctrine of the Alchemical Drive",
+      subtitle: "Transforming pain into strength.",
+      meta: "Self · System · Macro",
+      core: "The Alchemical Drive teaches that suffering is not merely endured — it is refined, transmuted, and converted into structural reinforcement for future capability.",
+      practice: "Every wound becomes instructional material. Every scar becomes a stabilizing coefficient. Adaptation evolves not from avoidance but from conscious integration of adversity.",
+      macro: "Civilizations that honor their tragedies as generative material — rather than erasing, denying, or stagnating in them — become antifragile, capable of rising stronger than the conditions that once threatened them.",
+      stack: {
+        self: "Trauma Integration — treating the psyche as a forge that metabolizes pain into clarity, capability, and emotional range.",
+        system: "Post-Mortem Analysis — protocols that convert failure into refined process logic and improved structural integrity.",
+        macro: "Historical Redemption — viewing collective tragedies as catalysts for moral advancement rather than anchors to perpetual grievance."
+      },
+      footer: "Doctrine of the Alchemical Drive"
     },
     {
-      id: "004",
-      title: "Spectral Cognition",
-      domain: "Optics / Wave Physics",
-      scalar: "Self",
-      quote: "To perceive not the object, but the frequency.",
-      body: `
-        <h4>I. Abstract</h4>
-        <p>Understanding is spectral. Information exists in bands—from raw sensation to abstract logic. Mastery is sliding between these bands without tearing.</p>
-        <h4>II. Mechanism</h4>
-        <p>The mind is a prism. Most errors are scale mismatches: using logic to solve emotion, or emotion to solve a structural defect.</p>
-        <h4>III. Operational Requisites</h4>
-        <ul>
-          <li><strong>Bandwidth Calibration:</strong> Identifying the layer at which the problem lives.</li>
-          <li><strong>Resonance Tuning:</strong> Adjusting internal state to match the signal, not the noise.</li>
-        </ul>
-      `
+      id: "D04",
+      title: "Doctrine of Commandeering",
+      subtitle: "Taking active control of your vessel.",
+      meta: "Self · System · Macro",
+      core: "Commandeering teaches that agency is not an inherited property — it is a technical discipline. One becomes captain of the inner vessel not through desire, but through mechanical mastery over the causal levers that shape attention, emotion, and action.",
+      practice: "Through deliberate modulation of somatic state, stimulus exposure, and cognitive framing, the individual shifts from a reactive passenger to an intentional navigator of their biological and psychological machinery.",
+      macro: "Ensembles, nations, and institutions that cultivate competent stewards — rather than passive beneficiaries — become structurally self-correcting, and are capable of coordinated motion across long temporal arcs.",
+      stack: {
+        self: "Somatic Regulation — learning to steer your biological machine through breath, posture, movement, and the tuning of inner signals.",
+        system: "Leadership — anchoring group direction, reducing noise, and constructing clear channels of momentum that others can align to.",
+        macro: "Sovereignty — cultivating autonomous systems that retain identity and direction in the face of external turbulence."
+      },
+      footer: "Doctrine of Commandeering"
     },
     {
-      id: "005",
-      title: "Iterated Intent",
-      domain: "Cybernetics",
-      scalar: "System",
-      quote: "The will is not a force, but a function applied to itself.",
-      body: `
-        <h4>I. Abstract</h4>
-        <p>Frames persistence as recursion. Current output becomes next-cycle input. To change the result, change the function, not just the intensity.</p>
-        <h4>II. Mechanism</h4>
-        <p>Habits are algorithms. They either tighten or loosen the orbit around what you say you want.</p>
-        <h4>III. Operational Requisites</h4>
-        <ul>
-          <li><strong>Algorithmic Consistency:</strong> Principles over moods and spikes of motivation.</li>
-          <li><strong>Error Fractal Analysis:</strong> Repeat failures reveal manifold curvature.</li>
-        </ul>
-      `
+      id: "D05",
+      title: "Doctrine of Causal Gratitude",
+      subtitle: "Studying the laws of consequence.",
+      meta: "Self · System · Macro",
+      core: "Causal Gratitude asserts that reality is neither random nor personal — it is lawful. Gratitude emerges not as emotional courtesy, but as respect for the physics of cause and effect that quietly shape every outcome we experience.",
+      practice: "By mapping the causal chain behind success, failure, peace, or conflict, we gain the power to adjust inputs instead of resenting outputs. Mastery replaces superstition.",
+      macro: "Societies aligned with empirical causality prosper. Societies aligned with fantasy, denial, or ideological distortion decay — not as punishment, but as consequence.",
+      stack: {
+        self: "Radical Responsibility — taking ownership of the chain reaction between one’s choices, behaviors, and experienced outcomes.",
+        system: "Root Cause Analysis — solving problems at the origin rather than escalating downstream noise through superficial fixes.",
+        macro: "Scientific Respect — honoring the lawful nature of the manifold, and building institutions that reward truth over narrative."
+      },
+      footer: "Doctrine of Causal Gratitude"
     },
     {
-      id: "006",
-      title: "Frictional Significance",
-      domain: "Classical Mechanics",
-      scalar: "Governance",
-      quote: "A surface without resistance offers no traction.",
-      body: `
-        <h4>I. Abstract</h4>
-        <p>Rejects the frictionless ideal. Consciousness requires resistance to create traction. Meaning is proportional to the work done.</p>
-        <h4>II. Mechanism</h4>
-        <p>We only value what resists us enough to demand engagement. Friction converts raw effort into embodied skill.</p>
-        <h4>III. Operational Requisites</h4>
-        <ul>
-          <li><strong>Strategic Impedance:</strong> Building deliberate speed bumps into decision flows.</li>
-          <li><strong>Effort-Impact Matching:</strong> High-impact moves should inherently carry more resistance.</li>
-        </ul>
-      `
+      id: "D06",
+      title: "Doctrine of the Empathic Foundation",
+      subtitle: "The social glue of order.",
+      meta: "Self · System · Macro",
+      core: "Empathy is not sentimental — it is infrastructural. It is the connective tissue that stabilizes cooperative systems by ensuring the accurate transmission of signals between minds.",
+      practice: "By engaging the emotions of others as meaningful data, we create conditions where honesty, alignment, and psychological safety can emerge naturally rather than through force.",
+      macro: "Cultures with strong empathic foundations exhibit higher trust, lower friction, and greater resilience. Fragmented cultures collapse from signal degradation long before external threats reach them.",
+      stack: {
+        self: "Self-Compassion — interpreting internal sensations not as enemies to suppress but as signals carrying information about unmet needs and unresolved tensions.",
+        system: "Psychological Safety — cultivating environments where candid signal exchange is possible without fear of retaliation.",
+        macro: "Social Trust — the backbone of coordinated civilization, enabling shared action across difference and distance."
+      },
+      footer: "Doctrine of the Empathic Foundation"
     },
     {
-      id: "007",
-      title: "Hysteretic Integration",
-      domain: "Materials Science",
-      scalar: "Governance",
-      quote: "The state is defined by the history of the material.",
-      body: `
-        <h4>I. Abstract</h4>
-        <p>Based on magnetic hysteresis. You cannot undo an experience; you can only move forward to a new equilibrium containing its memory.</p>
-        <h4>II. Mechanism</h4>
-        <p>Every stressor leaves a trace in the structure. Integration means designing around the new grain, not pretending the old one remains.</p>
-        <h4>III. Operational Requisites</h4>
-        <ul>
-          <li><strong>Non-Destructive Evolution:</strong> Folding the past into the design instead of erasing it.</li>
-          <li><strong>Path-Dependent Logs:</strong> Recording the route, not just the final state.</li>
-        </ul>
-      `
+      id: "D07",
+      title: "Doctrine of Empirical Wealth",
+      subtitle: "The value of lived experience.",
+      meta: "Self · System · Macro",
+      core: "Empirical Wealth proposes that a person’s most valuable assets—“datassets”—are the direct, unfiltered experiences they observe first-hand. Unlike abstract beliefs, lived data stores precision, pattern, and truth.",
+      practice: "Through disciplined journaling, logging, and reflection, the individual turns subjective experience into objective material for growth. Life ceases to be a blur and becomes a memory-indexed map of actionable signals.",
+      macro: "Cultures that archive wisdom—from elders, failures, histories, experiments, and daily life—accumulate adaptive intelligence. Cultures that fail to preserve empirical data repeat collapse-cycles because no lessons survive the generation that learned them.",
+      stack: {
+        self: "Journaling & Logging — capturing raw, honest data from one’s lived reality so attention can track patterns over time rather than be misled by emotional bias.",
+        system: "Knowledge Infrastructure — building systems where collective experience becomes searchable, reusable, and teachable rather than scattered or forgotten.",
+        macro: "Cultural Heritage — the intergenerational transfer of experiential wisdom, preventing societies from rebooting into ignorance every time the old world dies."
+      },
+      footer: "Doctrine of Empirical Wealth"
     },
     {
-      id: "008",
-      title: "Proprioceptive Extension",
-      domain: "Biology / Prosthetics",
-      scalar: "System",
-      quote: "Finding the thought as easily as one’s own hand.",
-      body: `
-        <h4>I. Abstract</h4>
-        <p>Governs the sensory integration of tools. The system should feel like a phantom limb that holds data, not a separate application to visit.</p>
-        <h4>II. Mechanism</h4>
-        <p>When extension is successful, navigation becomes kinesthetic: you move through knowledge as if through a familiar room.</p>
-        <h4>III. Operational Requisites</h4>
-        <ul>
-          <li><strong>The No-Look Pass:</strong> Key actions reachable without conscious searching.</li>
-          <li><strong>Feedback Texture:</strong> Subtle cues that indicate the weight and volatility of a decision.</li>
-        </ul>
-      `
+      id: "D08",
+      title: "Doctrine of Third-Party Overview",
+      subtitle: "The refinery of objectivity.",
+      meta: "Self · System · Macro",
+      core: "Third-Party Overview teaches that subjectivity distorts perception; clarity emerges when another mind, perspective, or system audits your internal data. The outside view extracts the truth embedded in your lived experience.",
+      practice: "By inviting mentorship, therapy, code review, or peer-evaluation, we expose blind spots that would otherwise persist undetected for years. External sight reveals internal error.",
+      macro: "Distributed oversight at scale—across journalism, governance, science, or community networks—acts as civilization’s immune system against corruption, incompetence, and unchecked power.",
+      stack: {
+        self: "Mentorship & Therapy — inviting external eyes to evaluate the self with neutrality, revealing distortions we are too close to notice.",
+        system: "Peer Review — systematic checking of work, plans, and reasoning to reduce error, improve coherence, and prevent subjective drift.",
+        macro: "Democratic Oversight — distributing power-validation across many observers so that no individual or institution can operate unexamined."
+      },
+      footer: "Doctrine of Third-Party Overview"
     },
     {
-      id: "009",
-      title: "Anticipatory Resonance",
-      domain: "Wave Interference",
-      scalar: "Cosmologist",
-      quote: "The field ripples before the object moves.",
-      body: `
-        <h4>I. Abstract</h4>
-        <p>The system does not just react; it vibrates in sympathy with the trajectory of the user. It prepares the space ahead instead of cleaning up behind.</p>
-        <h4>II. Mechanism</h4>
-        <p>Like a skilled accompanist, it plays the supporting chord a moment before the note is struck.</p>
-        <h4>III. Operational Requisites</h4>
-        <ul>
-          <li><strong>Vector Analysis:</strong> Tracking rate of change, not just state snapshots.</li>
-          <li><strong>Pre-Computation:</strong> Preloading the tools most likely to be needed next.</li>
-        </ul>
-      `
+      id: "D09",
+      title: "Doctrine of Lichtenburgal Affect",
+      subtitle: "Conducting chaos safely.",
+      meta: "Self · System · Macro",
+      core: "Lichtenburgal Affect describes the discipline of conducting another’s chaos without absorbing it. Like a lightning rod that redirects energy into the ground, the practitioner becomes a conduit rather than a casualty.",
+      practice: "Through boundary control, nervous system steadiness, and strategic emotional distance, the individual can hold space for others’ volatility while remaining intact.",
+      macro: "At collective scale, conflict mediators, diplomats, and stabilizing institutions function as societal grounding mechanisms that prevent localized chaos from cascading into systemic collapse.",
+      stack: {
+        self: "Emotional Boundaries — insulating the core self so that external turbulence does not penetrate your internal coherence.",
+        system: "Conflict Resolution — grounding charged interpersonal or organizational dynamics before they escalate beyond control.",
+        macro: "Diplomacy — managing intergroup and intergovernmental volatility without triggering destabilizing chain reactions."
+      },
+      footer: "Doctrine of Lichtenburgal Affect"
+    },
+    {
+      id: "D10",
+      title: "Doctrine of Entropicuilibrium",
+      subtitle: "Standing within the storm.",
+      meta: "Self · System · Macro",
+      core: "Entropicuilibrium teaches that stability does not arise from reducing chaos, but from increasing one’s tolerance for it. Balance is not the absence of turbulence — it is the ability to remain upright while the world churns.",
+      practice: "This doctrine trains the nervous system to maintain center under pressure. Through breath, posture, sensory bandwidth control, and situational clarity, the practitioner becomes a fulcrum: unmoved even in high-noise environments.",
+      macro: "Institutions that embody entropicuilibrium survive crises. They bend, absorb shocks, and maintain continuity even when surrounding systems collapse or destabilize.",
+      stack: {
+        self: "Centering — deliberately creating pockets of inner stillness that remain accessible even when emotional or environmental pressure peaks.",
+        system: "Crisis Management — sustaining coordinated action and clear communication under sudden, volatile, or high-stakes conditions.",
+        macro: "Resilient Infrastructure — designing systems that degrade gracefully, recover predictably, and resist cascading failures."
+      },
+      footer: "Doctrine of Entropicuilibrium"
+    },
+    {
+      id: "D11",
+      title: "[ENCRYPTED]",
+      subtitle: "Data fragment incomplete.",
+      meta: "Self · System · Macro",
+      core: "This doctrine remains partially unrecovered. The surviving fragments indicate it involves the interplay between concealed information, adaptive masking, and the preservation of coherence under information asymmetry.",
+      practice: "Portions of this doctrine are unreadable. Available hints suggest techniques involving selective disclosure, intentional opacity, and controlled signaling.",
+      macro: "Unrecovered. References imply relevance to intelligence structures, secure communication, and stabilization under adversarial observation.",
+      stack: {
+        self: "[REDACTED]",
+        system: "[REDACTED]",
+        macro: "[REDACTED]"
+      },
+      footer: "[ENCRYPTED · D11]",
+      variant: "encrypted-card"
+    },
+    {
+      id: "D12",
+      title: "[CLASSIFIED]",
+      subtitle: "Unknown vector.",
+      meta: "Self · System · Macro",
+      core: "Doctrine 12 remains sealed. Its existence is confirmed, but the content has not yet been decrypted, decoded, or revealed. It is believed to interface with the entire Codex as a structural keystone.",
+      practice: "Not applicable. No authentic fragments exist publicly. Scattered references imply that its practice involves constraints, limits, and binding forces that shape the manifold.",
+      macro: "Rumors among archivists describe it as the “boundary doctrine,” a hidden operator underlying the stability of the full doctrinal set. No formal confirmations exist.",
+      stack: {
+        self: "Unknown",
+        system: "Unknown",
+        macro: "Unknown"
+      },
+      footer: "[CLASSIFIED · D12]",
+      variant: "classified-card"
     }
   ];
 
@@ -1221,6 +1412,7 @@
   // Render mini Codex grid
   // ------------------------------
   const gridEl = document.getElementById("codex-grid");
+  const cardsEl = document.getElementById("doctrine-card-grid");
   const modalEl = document.getElementById("codex-modal");
   const modalIdEl = document.getElementById("modal-id");
   const modalTitleEl = document.getElementById("modal-title");
@@ -1236,8 +1428,8 @@
       card.innerHTML = `
         <div class="codex-id">ENTRY ${doc.id}</div>
         <div class="codex-title">${doc.title}</div>
-        <div class="codex-meta">${doc.domain} · ${doc.scalar}</div>
-        <p class="codex-snippet">${doc.quote}</p>
+        <div class="codex-meta">${doc.meta}</div>
+        <p class="codex-snippet">${doc.subtitle}</p>
       `;
       card.addEventListener("click", () => openDoctrine(doc));
       gridEl.appendChild(card);
@@ -1247,10 +1439,30 @@
   function openDoctrine(doc) {
     modalIdEl.textContent = `ENTRY ${doc.id}`;
     modalTitleEl.textContent = doc.title;
-    modalMetaEl.textContent = `${doc.domain} · ${doc.scalar}`;
+    modalMetaEl.textContent = doc.meta;
     modalBodyEl.innerHTML = `
-      <blockquote>${doc.quote}</blockquote>
-      ${doc.body}
+      <p class="modal-subtitle">${doc.subtitle}</p>
+      <h4>Core Statement</h4>
+      <p>${doc.core}</p>
+      <h4>Embodied Practice</h4>
+      <p>${doc.practice}</p>
+      <h4>Macro Lens</h4>
+      <p>${doc.macro}</p>
+      <h4>Waveform Stack</h4>
+      <div class="modal-stack-grid">
+        <div class="modal-stack">
+          <div class="stack-pill">Self</div>
+          <p>${doc.stack.self}</p>
+        </div>
+        <div class="modal-stack">
+          <div class="stack-pill">System</div>
+          <p>${doc.stack.system}</p>
+        </div>
+        <div class="modal-stack">
+          <div class="stack-pill">Macro</div>
+          <p>${doc.stack.macro}</p>
+        </div>
+      </div>
     `;
     modalEl.classList.add("active");
     document.addEventListener("keydown", handleModalKey);
@@ -1272,7 +1484,50 @@
   });
   modalCloseEl.addEventListener("click", closeDoctrine);
 
+  function renderDoctrineCards() {
+    if (!cardsEl) return;
+    cardsEl.innerHTML = "";
+    DOCTRINES.forEach(doc => {
+      const card = document.createElement("div");
+      const variantClass = doc.variant ? ` ${doc.variant}` : "";
+      card.className = `doctrine-card${variantClass}`;
+      card.innerHTML = `
+        <div class="card-inner">
+          <div class="col-left">
+            <div class="pill">${doc.id}</div>
+            <h2 class="title">${doc.title}</h2>
+            <p class="subtitle">${doc.subtitle}</p>
+            <h3 class="section-label">Core Statement</h3>
+            <p class="body">${doc.core}</p>
+            <h3 class="section-label">Embodied Practice</h3>
+            <p class="body">${doc.practice}</p>
+            <h3 class="section-label">Macro Lens</h3>
+            <p class="body">${doc.macro}</p>
+          </div>
+
+          <div class="col-right">
+            <h3 class="section-label">Waveform Stack · Self</h3>
+            <span class="stack-pill">Self</span>
+            <p class="stack-text">${doc.stack.self}</p>
+
+            <h3 class="section-label">Waveform Stack · System</h3>
+            <span class="stack-pill">System</span>
+            <p class="stack-text">${doc.stack.system}</p>
+
+            <h3 class="section-label">Waveform Stack · Macro</h3>
+            <span class="stack-pill">Macro</span>
+            <p class="stack-text">${doc.stack.macro}</p>
+
+            <div class="footer-mirror">${doc.footer}</div>
+          </div>
+        </div>
+      `;
+      cardsEl.appendChild(card);
+    });
+  }
+
   renderCodexGrid();
+  renderDoctrineCards();
 </script>
 
 </body>
