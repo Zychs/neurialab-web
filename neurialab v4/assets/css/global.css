@@ -1,11 +1,226 @@
-/* FIELD NOTES / BLOG PLANE */
-/* Paste this block into your existing global.css or use standalone */
-.nx-topbar {
-  border-bottom: 1px solid var(--border);
-  background: radial-gradient(circle at top, rgba(15,15,30,0.96), rgba(5,5,12,0.96));
-  position: sticky;
-  top: 0;
-  z-index: 40;
-  backdrop-filter: blur(18px);
+/* ------------------------------------------
+   GLOBAL DARK MODE — NEURIALAB V4
+   Off-black canvas, white text, quiet accents
+------------------------------------------- */
+
+/* Base palette */
+:root {
+  --bg: #0b0b0d;
+  --bg-alt: #111115;
+  --fg: #f5f5f7;
+  --fg-soft: #c9c9d0;
+  --accent: #4dc6ff;    /* cold neon signal */
+  --accent-soft: #1b86a7;
+
+  --border: #2a2a30;
+  --card-bg: #141418;
+  --radius: 10px;
+  --transition: 0.2s ease;
 }
-/* ... (rest of the styles from your blog CSS block) ... */
+
+
+/* Reset / Typography --------------------------------------- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: 'JetBrains Mono', monospace;
+  line-height: 1.6;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--accent-soft);
+}
+
+img {
+  max-width: 100%;
+  border-radius: var(--radius);
+}
+
+
+/* Layout Helpers ------------------------------------------- */
+
+.container {
+  width: min(900px, 90%);
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.4rem;
+  margin-top: 3rem;
+}
+
+.card {
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+}
+
+
+/* Header / Nav --------------------------------------------- */
+
+header {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 2.5rem;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a {
+  margin-left: 1.5rem;
+  color: var(--fg-soft);
+}
+
+nav a:hover {
+  color: var(--fg);
+}
+
+
+/* Landing Page (Lantern Grid) ------------------------------ */
+
+.lantern-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.8rem;
+  margin-top: 3rem;
+}
+
+.lantern-cell {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  padding: 3rem 2rem;
+  text-align: center;
+  border-radius: var(--radius);
+  transition: var(--transition);
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.lantern-cell:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 12px rgba(77, 198, 255, 0.25);
+}
+
+
+/* Blog (Strata) -------------------------------------------- */
+
+.entry {
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.entry-title {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.entry-date {
+  color: var(--fg-soft);
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+
+/* Codex (Doctrines) ---------------------------------------- */
+
+.doctrine-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.2rem;
+  background: var(--card-bg);
+  padding: 2rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 2rem;
+}
+
+.doctrine-light, .doctrine-shadow, .doctrine-meta {
+  padding: 1rem;
+}
+
+.doctrine-title {
+  font-size: 1.4rem;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.doctrine-shadow {
+  opacity: 0.85;
+  line-height: 1.8;
+}
+
+
+/* Capture (Gallery) ---------------------------------------- */
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.2rem;
+}
+
+.gallery img {
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.gallery img:hover {
+  opacity: 0.85;
+}
+
+
+/* Contact --------------------------------------------------- */
+
+form input, form textarea {
+  width: 100%;
+  padding: 0.9rem;
+  margin-bottom: 1rem;
+  font-family: inherit;
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  color: var(--fg);
+  border-radius: var(--radius);
+}
+
+form button {
+  padding: 0.9rem 1.4rem;
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+form button:hover {
+  background: var(--accent-soft);
+}
