@@ -60,3 +60,10 @@ To preserve non-disclosure:
 This document is *purely aesthetic + structural*.
 
 ---
+
+---
+
+## Hosting neurialab.bond
+- Place this repository at the root of your static host (e.g., object storage or a simple nginx directory).
+- `index.html` automatically redirects visitors to **v4.2** (`/v4.2/`), while keeping **v3.5.4** available at `/v3.5.4/`.
+- The v4.2 lantern surface pulls its styling from `v4.2/assets/css/global.css` and keeps blog/codex content under `v4.2/`.
